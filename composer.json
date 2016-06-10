@@ -1,0 +1,23 @@
+{
+    "name": "vincenthornikx/php-construct-flowchart",
+    "description": "PHP Flowchart Construct",
+    "keywords": ["php","flowchart"],
+    "homepage": "https://github.com/vincenthornikx/php-construct-flowchart",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Vincent Hornikx",
+            "email": "vincent@vhds.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {"Ikal\\PhpFlowchart\\": "src/"}
+    }
+}

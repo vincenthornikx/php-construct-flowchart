@@ -1,38 +1,37 @@
 <?php
 
-
 namespace Ikal\PhpFlowchart\Element;
-
 
 class NodeConnection
 {
 
     /**
-     * @var Node
+     * @var AbstractNode
      */
     protected $fromNode;
-
     /**
-     * @var Node
+     * @var AbstractNode
      */
     protected $toNode;
 
     /**
-     * @param Node $fromNode
-     * @param Node $toNode
+     * @param AbstractNode $fromNode
+     * @param AbstractNode $toNode
      *
      * @return $this
      */
-    public function connect($fromNode, $toNode)
+    public function connectNodes($fromNode, $toNode)
     {
         $this->fromNode = $fromNode;
         $this->toNode = $toNode;
+
+        $fromNode->addExitConnection($this);
 
         return $this;
     }
 
     /**
-     * @return Node
+     * @return AbstractNode
      */
     public function getFromNode()
     {
@@ -40,7 +39,7 @@ class NodeConnection
     }
 
     /**
-     * @param Node $fromNode
+     * @param AbstractNode $fromNode
      *
      * @return $this
      */
@@ -52,7 +51,7 @@ class NodeConnection
     }
 
     /**
-     * @return Node
+     * @return AbstractNode
      */
     public function getToNode()
     {
@@ -60,7 +59,7 @@ class NodeConnection
     }
 
     /**
-     * @param Node $toNode
+     * @param AbstractNode $toNode
      *
      * @return $this
      */

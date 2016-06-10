@@ -1,11 +1,14 @@
 <?php
 
-
 namespace Ikal\PhpFlowchart\Element;
 
-
-abstract class Node
+abstract class AbstractNode
 {
+
+    /**
+     * @var string
+     */
+    protected $id;
 
     /**
      * @var NodeConnection[]
@@ -35,5 +38,25 @@ abstract class Node
     public function getExitConnections()
     {
         return $this->exitConnections;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }

@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Ikal\PhpFlowchart\Element\Node\Type;
 
-
-use Ikal\PhpFlowchart\Element\Node;
+use Ikal\PhpFlowchart\Element\AbstractNode;
 use Ikal\PhpFlowchart\Element\NodeConnection;
 
-abstract class Start extends Node
+abstract class Start extends AbstractNode
 {
 
     /**
@@ -19,7 +17,6 @@ abstract class Start extends Node
 
         return $this->getExitConnections();
     }
-
 
     abstract public function setup();
 }

@@ -1,11 +1,10 @@
 <?php
 
-
 namespace Ikal\PhpFlowchart\Element\Node\Type;
 
-use Ikal\PhpFlowchart\Element\Node;
+use Ikal\PhpFlowchart\Element\AbstractNode;
 
-class End extends Node
+class End extends AbstractNode
 {
 
     /**
