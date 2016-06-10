@@ -37,7 +37,7 @@ class Configuration
     }
 
     /**
-     * @return Start{}|Start
+     * @return Start[]
      */
     public function getStartNodes()
     {

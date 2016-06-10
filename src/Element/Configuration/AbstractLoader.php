@@ -23,7 +23,7 @@ abstract class AbstractLoader
 
         // improper data format, panic!
         if (!is_array($data) || !isset($data['nodes'], $data['connections'])) {
-            // error
+            // todo error
             return;
         }
 
@@ -52,14 +52,14 @@ abstract class AbstractLoader
     protected function parseNodeData($data)
     {
         if (!is_array($data) || !isset($data['id'], $data['class']) || !class_exists($data['class'])) {
-            // panic
+            // todo panic
             return;
         }
 
         /** @var AbstractNode $node */
         $node = new $data['class']();
         if (!$node instanceof AbstractNode) {
-            // panic
+            // todo panic
             return;
         }
 
@@ -73,14 +73,14 @@ abstract class AbstractLoader
     protected function parseConnectionData($data)
     {
         if (!is_array($data) || !isset($data['from'], $data['to'])) {
-            // panic
+            // todo panic
             return;
         }
 
         $fromId = $data['from'];
         $toId = $data['to'];
         if (!isset($this->nodes[$fromId], $this->nodes[$toId])) {
-            // connection cannot be made because of missing nodes, panic
+            // todo connection cannot be made because of missing nodes, panic
             return;
         }
 
